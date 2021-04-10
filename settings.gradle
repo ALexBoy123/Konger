@@ -1,2 +1,6 @@
+include ':module_mine'
+include ':lib_common'
+include ':module_login'
+include ':lib_basemvvm'
 include ':app'
 rootProject.name = "Konger"

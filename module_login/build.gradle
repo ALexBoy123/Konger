@@ -1,0 +1,24 @@
+apply from: "../component_build.gradle"
+
+android {
+    resourcePrefix "login_" //给 Module 内的资源名增加前缀, 避免资源名冲突
+    flavorDimensions "verison"
+
+    defaultConfig {
+
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+}
